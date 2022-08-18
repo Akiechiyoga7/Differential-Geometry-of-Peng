@@ -1,0 +1,70 @@
+% 介绍文本框底纹填充效果，原作者：https://jevon.org/wiki/Fancy_Quotation_Boxes_in_Latex
+\documentclass[paper=a5,pagesize=auto]{book}
+\usepackage{xeCJK}
+\usepackage{newtxtext}
+\usepackage{geometry}
+\usepackage{lipsum} % 该宏包是通过 \lipsum 命令生成一段本文，正式使用时不需要引用该宏包
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage[strict]{changepage} % 提供一个 adjustwidth 环境
+\usepackage{framed} % 实现方框效果
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{latexsym,bm,amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[all]{xy} % 实现交换图的绘制
+
+\geometry{a4paper,centering,scale=0.8}
+% environment derived from framed.sty: see leftbar environment definition
+\definecolor{formalshade}{rgb}{0.95,0.95,1} % 文本框颜色
+% ------------------******-------------------
+% 注意行末需要把空格注释掉，不然画出来的方框会有空白竖线
+\newenvironment{formal}{%
+	\def\FrameCommand{%
+		\hspace{1pt}%
+		{\color{DarkBlue}\vrule width 2pt}%
+		{\color{formalshade}\vrule width 4pt}%
+		\colorbox{formalshade}%
+	}%
+	\MakeFramed{\advance\hsize-\width\FrameRestore}%
+	\noindent\hspace{-4.55pt}% disable indenting first paragraph
+	\begin{adjustwidth}{}{7pt}%
+		\vspace{2pt}\vspace{2pt}%
+	}
+	{%
+		\vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+\definecolor{greenshade}{rgb}{0.90,0.99,0.91} % 绿色文本框，竖线颜色设为 Green
+\definecolor{redshade}{rgb}{1.00,0.90,0.90}% 红色文本框，竖线颜色设为 LightCoral
+\definecolor{brownshade}{rgb}{0.99,0.97,0.93} % 莫兰迪棕色，竖线颜色设为 BurlyWood
+% ------------------******-------------------
+
+
+\newcommand{\arcsinh}
+{\text{arcsinh}}
+
+\begin{document}
+	\title{《微分几何》（彭家贵）习题}  %%书名
+	
+	\author{谭惠心} %%作者
+	
+%	\date{} %%如果没有这句，会生成时间
+	
+	\maketitle  %%生成书名
+	
+	\tableofcontents  %%生成目录
+	
+	\mainmatter %%表示文章的正文部分，在生成目录后将从第一页开始
+	
+	\include{./Chapter2}
+	
+%	\part{elementary}
+%	
+%	\part{advanced}
+%	
+%	\chapter{introduction}
+%	
+%	\chapter{conclusion}
+	
+\end{document}

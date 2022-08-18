@@ -1,0 +1,429 @@
+\chapter{曲线的局部理论}
+%----------------------***----------------------
+\section{习题}
+
+% This is 40% cyan plus 60% black.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!black, title = 题2.1]
+	求下列曲线的弧长与曲率:
+
+(1) $y=ax^2$;
+
+(2) $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$;
+
+(3) $\boldsymbol{r}(t) = (a \cosh t, b \sinh t)$;
+
+(4) $\boldsymbol{r}(t) = (t, a \cosh \frac{t}{a})$ $(a>0)$.
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% green.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!green, title = 解2.1]
+	(1)
+	可设$r(t)=(t,at^2)$,
+	于是
+	\begin{equation*}
+		\begin{split}
+			s(t)
+			&= \int_{0}^{t}|\boldsymbol{r}'(u)|du \\
+			&= \int \sqrt{1+4a^2u^2}du \\
+			&= \frac{1}{2}t\sqrt{1+4a^{2}t^2} + \frac{1}{2a}\arcsinh 2at
+		\end{split}
+	\end{equation*}
+	另一方面有
+	\begin{equation*}
+		\frac{ds}{dt} = \sqrt{1+4a^2t^2}
+	\end{equation*}
+	于是
+	\begin{equation*}
+		\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+		=(1+4a^2t^2)^{-\frac{1}{2}}(1,2at)
+	\end{equation*}
+	由于$\boldsymbol{n}$是$\boldsymbol{t}$逆时针旋转$\frac{\pi}{2}$得到,
+	即
+	\begin{equation*}
+		\boldsymbol{n}=(1+4a^2t^2)^{-\frac{1}{2}}(-2at,1)
+	\end{equation*}
+	而
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+			=(1+4a^2t^2)^{-2}(-4a^2t,2a)
+	\end{equation*}
+	根据$\kappa(t)\boldsymbol{n}=\frac{d\boldsymbol{t}}{ds}$有
+	\begin{equation*}
+		\kappa(t)=2a(1+4a^2t^2)^{-\frac{3}{2}}.
+	\end{equation*}
+
+(2)
+取一种参数化表示为
+$\boldsymbol{r}(t)=(a\cos t,b \sin t)$,
+则
+\begin{equation*}
+	\begin{split}
+		s(t)
+		&= \int_{0}^{t}|\boldsymbol{r}'(u)|du \\
+		&= \int_{0}^{t}\sqrt{a^2\sin^2u+b^2\cos^2u}du
+	\end{split}
+\end{equation*}
+此时有
+\begin{equation*}
+	\frac{ds}{dt}=\sqrt{a^2\sin^2t+b^2\cos^2t}
+\end{equation*}
+因此
+\begin{equation*}
+	\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+	=(a^2\sin^2t+b^2\cos^2t)^{-\frac{1}{2}}(-a\sin t, b\cos t)
+\end{equation*}
+又因为$\boldsymbol{n}$为$\boldsymbol{t}$逆时针旋转$\frac{\pi}{2}$,
+故
+\begin{equation*}
+	\boldsymbol{n}=(a^2\sin^2t+b^2\cos^2t)^{-\frac{1}{2}}(-b\cos t, -a\sin t)
+\end{equation*}
+而
+\begin{equation*}
+	\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+	=(a^2\sin^2t+b^2\cos^2t)^{-2}(-ab^2\cos t, -a^2b\sin t)
+\end{equation*}
+根据$\kappa(t)\boldsymbol{n}=\frac{d\boldsymbol{t}}{ds}$,有
+\begin{equation*}
+	\kappa(t)=ab(a^2\sin^2t+b^2\cos^2t)^{-\frac{3}{2}}.
+\end{equation*}
+
+(3)
+由
+\begin{equation*}
+	\begin{split}
+		s(t)
+		&=\int_{0}^{t}|\boldsymbol{r}'(u)|du \\
+		&=\int_{0}^{t}\sqrt{a^2\sinh^2u+b^2\cosh^2u}du
+	\end{split}
+\end{equation*}
+注意到
+\begin{equation*}
+	\frac{ds}{dt}=\sqrt{a^2\sinh^2t+b^2\cosh^2t}
+\end{equation*}
+因此
+\begin{equation*}
+	\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+	=(a^2\sinh^2t+b^2\cosh^2t)^{-\frac{1}{2}}(a\sinh t,b \cosh t)
+\end{equation*}
+而由于$\boldsymbol{n}$为$\boldsymbol{t}$的逆时针旋转$\frac{\pi}{2}$,
+故
+\begin{equation*}
+	\boldsymbol{n}=(a^2\sinh^2 t+b^2\cosh^2t)^{-\frac{1}{2}}(-b\cosh t, a\sinh t)
+\end{equation*}
+此时
+\begin{equation*}
+	\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+	=(a^2\sinh^2t+b^2\cosh^2t)^{-2}(ab^2\cosh t,-a^2b\sinh t)
+\end{equation*}
+由$\kappa (t)\boldsymbol{n}=\frac{d\boldsymbol{t}}{ds}$,
+有曲率
+\begin{equation*}
+	\kappa(t) = -ab(a^2\sinh^2t+b^2\cosh^2t)^{-\frac{3}{2}}.
+\end{equation*}
+
+(4)
+由
+\begin{equation*}
+	\begin{split}
+		s(t)
+		&= \int_{0}^{t}|\boldsymbol{r}'(u)|du \\
+		&= \int_{0}^{t}\sqrt{1+\sinh^2\frac{u}{a}}du \\
+		&= a\sinh \frac{t}{a}
+	\end{split}
+\end{equation*}
+注意到
+\begin{equation*}
+	\frac{ds}{dt} = \sqrt{1+\sinh^2\frac{t}{a}}
+\end{equation*}
+因此
+\begin{equation}
+	\boldsymbol{t}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+	=(1+\sinh^2\frac{t}{a})^{-\frac{1}{2}}(1,\sinh\frac{t}{a})
+\end{equation}
+因$\boldsymbol{n}$为$\boldsymbol{t}$逆时针旋转$\frac{\pi}{2}$,
+故
+\begin{equation*}
+	\boldsymbol{n} = (1+\sin^{2}\frac{t}{a})^{-\frac{1}{2}}(-\sinh\frac{t}{a},1)
+\end{equation*}
+而
+\begin{equation*}
+	\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+	=(1+\sinh^2\frac{t}{a})^{-2}(-\frac{1}{a}\sinh\frac{t}{a}\cosh\frac{t}{a},\frac{1}{a}\cosh\frac{t}{a})
+\end{equation*}
+由于$\kappa (t)\boldsymbol{n}=\frac{d\boldsymbol{t}}{ds}$,
+则曲率
+\begin{equation*}
+	\kappa(t)=\frac{1}{a}\cosh\frac{t}{a}(1+\sinh^2\frac{t}{a})^{-\frac{3}{2}}.
+\end{equation*}
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% black.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!black, title = 题2.2]
+	设曲线$\boldsymbol{r}(t)=(x(t),y(t))$,
+	证明它的曲率为
+	\begin{equation*}
+		\kappa(t)=\frac{x'(t)y''(t)-x''(t)y'(t)}{((x')^2+(y')^2)^{-\frac{3}{2}}}
+	\end{equation*}
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% green.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!green, title = 证明2.2]
+	由
+	\begin{equation*}
+		\frac{ds}{dt}=((x'(t))^2+(y'(t))^2)^{-\frac{1}{2}}
+	\end{equation*}
+	则
+	\begin{equation*}
+		\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+		=((x'(t))^2+(y'(t))^2)^{-\frac{1}{2}}(x'(t),y'(t))
+	\end{equation*}
+	由于$\boldsymbol{n}$是$\boldsymbol{t}$逆时针旋转$\frac{\pi}{2}$得到,
+	故
+	\begin{equation*}
+		\boldsymbol{n}=((x'(t))^2+(y'(t))^2)^{-\frac{1}{2}}(-y'(t),x'(t))
+	\end{equation*}
+	注意到
+	\begin{equation*}
+		(x'(t)((x'(t))^2+(y'(t))^2)^{-\frac{1}{2}})_{t}
+		=
+		x'(t)(x'(t)y''(t)-x''(t)y'(t))((x'(t))^2+(y'(t))^2)^{-\frac{3}{2}}
+	\end{equation*}
+	\begin{equation*}
+		(y'(t)((x'(t))^2+(y'(t))^2)^{-\frac{1}{2}})_{t}
+		=
+		y'(t)(y'(t)x''(t)-y''(t)x'(t))((x'(t))^2+(y'(t))^2)^{-\frac{3}{2}}
+	\end{equation*}
+	于是
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=((x'(t))^2+(y'(t))^2)^{-2}(x'(t)y''(t)-x''(t)y'(t))(-y'(t),x'(t))
+	\end{equation*}
+	根据$\kappa(t)\boldsymbol{n}=\frac{d\boldsymbol{t}}{ds}$,
+	我们有
+	\begin{equation*}
+		\kappa(t)=(x'(t)y''(t)-x''(t)y'(t))((x'(t))^2+(y'(t))^2)^{-\frac{3}{2}}.
+	\end{equation*}
+\end{tcolorbox}
+% This is 40% cyan plus 60% black.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!black, title = 题2.3]
+	设曲线$C$在极坐标$(r,\theta)$上的表示为$r=f(\theta)$,
+	证明曲线$C$的曲率表达式为
+	\begin{equation*}
+		\kappa(\theta)=\frac{f^2(\theta)+2\left( \frac{df}{d\theta}\right)^2-f(\theta)\frac{d^2f}{d\theta^2}}{\left(f^2(\theta)+\left(\frac{df}{d\theta}\right)^2\right)^{\frac{3}{2}}}
+	\end{equation*}
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% green.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!green, title = 证明2.3]
+	令
+	\begin{equation*}
+		\begin{split}
+			x(\theta) &= f(\theta) \cos \theta \\
+			y(\theta) &= f(\theta) \sin \theta
+		\end{split}
+	\end{equation*}
+	求导有
+	\begin{equation*}
+		\begin{split}
+			x'(\theta) &= f'\cos\theta - f\sin\theta \\
+			y'(\theta) &= f'\sin\theta + f\cos\theta
+		\end{split}
+	\end{equation*}
+	\begin{equation*}
+		\begin{split}
+			x''(\theta) &= f''\cos\theta - 2f'\sin\theta -f\cos\theta \\
+			y''(\theta) &= f''\sin\theta +2f'\cos\theta -f\sin\theta
+		\end{split}
+	\end{equation*}
+	带入曲率的计算公式中有
+	\begin{equation*}
+		\begin{split}
+			\kappa(\theta)
+			&=\frac{x'(\theta)y''(\theta)-x''(\theta)y'(\theta)}{((x'(\theta))^{2}+(y'(\theta))^{2})^{\frac{3}{2}}} \\
+			&=\frac{(f'\cos\theta - f\sin\theta)(f''\sin\theta +2f'\cos\theta -f\sin\theta)-(f''\cos\theta - 2f'\sin\theta -f\cos\theta)(f'\sin\theta + f\cos\theta)}{((f'\cos\theta - f\sin\theta)^2+(f'\sin\theta + f\cos\theta)^2)^{\frac{3}{2}}} \\
+			&=\frac{f^2(\theta)+2\left( \frac{df}{d\theta}\right)^2-f(\theta)\frac{d^2f}{d\theta^2}}{\left(f^2(\theta)+\left(\frac{df}{d\theta}\right)^2\right)^{\frac{3}{2}}}
+		\end{split}
+	\end{equation*}
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% black.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!black, title = 题2.4]
+	求下列曲线的曲率和挠率
+	
+	(1) $\boldsymbol{r}(t) = (a\cosh t, a\sinh t,bt)$ $(a>0)$
+	
+	(2) $\boldsymbol{r}(t) = (3t-t^2,3t^2,3t+t^2)$
+	
+	(3) $\boldsymbol{r}(t) = (a(1-\sin t),a(1-\cos t), bt)$ $(a>0)$
+	
+	(4) $\boldsymbol{r}(t) = (at,\sqrt{2}a\ln t, \frac{a}{t})$ $(a>0)$
+\end{tcolorbox}
+
+% This is 40% cyan plus 60% green.
+\begin{tcolorbox}
+	[breakable, colback = Emerald!10, colframe = cyan!40!green, title = 解2.4]
+	(1)
+	由
+	\begin{equation*}
+		\frac{ds}{dt}
+		=\sqrt{a^2\sinh^2t+a^2\cosh^2t+b^2}
+		=\sqrt{2a^2\cosh^2t-a^2+b^2}
+	\end{equation*}
+	知
+	\begin{equation*}
+		\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+		=(2a^2\cosh^2t-a^2+b^2)^{-\frac{1}{2}}(a\sinh t, a\cosh t, b)
+	\end{equation*}
+	故
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=(2a^2\cosh^2t-a^2+b^2)^{-2}(a(a^2+b^2)\cosh t, -a(a^2-b^2)\sinh t, -2a^2b\sinh t\cosh t)
+	\end{equation*}
+	则曲率为
+	\begin{equation*}
+		\kappa(t)=|\frac{d\boldsymbol{t}}{ds}|
+		=a(2a^2\cosh^2t-a^2+b^2)^{-\frac{3}{2}}(2b^2\cosh^2t+a^2-b^2)^{\frac{1}{2}}
+	\end{equation*}
+	于是
+	\begin{equation*}
+		\begin{split}
+			\boldsymbol{n}&=\frac{1}{\kappa(t)}\frac{d\boldsymbol{t}}{ds} \\
+			&=(2a^2\cosh^2t-a^2+b^2)^{-\frac{1}{2}}(2b^2\cosh^2t+a^2-b^2)^{-\frac{1}{2}}((a^2+b^2)\cosh t,(b^2-a^2)\sinh t, -2ab\sinh t\cosh t)
+		\end{split}
+	\end{equation*}
+	则
+	\begin{equation*}
+		\boldsymbol{b}(s)=\boldsymbol{t}\wedge \boldsymbol{n}=(2b^2\cosh^2t+a^2-b^2)^{-\frac{1}{2}}(-b\sinh t,b\cosh t, -a)
+	\end{equation*}
+	注意到
+	\begin{equation*}
+		\begin{split}
+			\dot{\boldsymbol{b}}(s)
+			&=\frac{d\boldsymbol{b}(s)}{dt}\frac{dt}{ds} \\
+			&=(2b^2\cosh^2t+a^2-b^2)^{-\frac{3}{2}}(2a^2\cosh^t-a^2+b^2)^{-\frac{1}{2}}(-b(a^2+b^2)\cosh t,b(a^2-b^2)\sinh t, 2ab^2\sinh t\cosh t)
+		\end{split}
+	\end{equation*}
+	于是根据$\dot{\boldsymbol{b}}=-\tau(t)\boldsymbol{n}$有
+	\begin{equation*}
+		\tau(t)=\frac{b}{2b^2\cosh^2 t +a^2-b^2}
+	\end{equation*}
+	
+	(2)
+	由
+	\begin{equation*}
+		\begin{split}
+			\frac{ds}{dt}
+			&=\sqrt{(3-2t)^2+(6t)^2+(3+2t)^2} \\
+			&=\sqrt{44t^2+18}
+		\end{split}
+	\end{equation*}
+	则
+	\begin{equation*}
+		\boldsymbol{t}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=(44t^2+18)^{-\frac{1}{2}}(3-2t,6t,3+2t)
+	\end{equation*}
+	故
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=(22t^2+9)^{-2}(-3(11t+3),27,-3(11t+3))
+	\end{equation*}
+	则曲率为
+	\begin{equation*}
+		\kappa(t)=|\frac{d\boldsymbol{t}}{ds}| = \frac{3\sqrt{11}}{(22t^2+9)^{\frac{3}{2}}}
+	\end{equation*}
+	于是法向量
+	\begin{equation*}
+		\boldsymbol{n}=\frac{1}{\kappa(t)}\frac{d\boldsymbol{t}}{ds}
+		=\frac{1}{\sqrt{11}}(22t^2+9)^{-\frac{1}{2}}(-(11t+3),9,-(11t-3))
+	\end{equation*}
+	则副法向量为
+	\begin{equation*}
+		\boldsymbol{b}(s)=\boldsymbol{t}\wedge\boldsymbol{n}
+		=\frac{1}{\sqrt{11}}(-\frac{3}{2},-1,\frac{3}{2})
+	\end{equation*}
+	而
+	\begin{equation*}
+		\dot{\boldsymbol{b}}=\frac{d\boldsymbol{b}}{dt}\frac{dt}{ds}=0
+	\end{equation*}
+	于是根据$\dot{\boldsymbol{b}}(s)=-\tau(s)\boldsymbol{n}(s)$,
+	可知挠率
+	\begin{equation*}
+		\tau(s)=0.
+	\end{equation*}
+	
+	(3)
+	由
+	\begin{equation*}
+		\begin{split}
+			\frac{ds}{dt}
+			&=\sqrt{(-a\cos t)^2+(a\sin t)^2+b^2} \\
+			&=\sqrt{a^2\cos^2t+a^2\sin^2t+b^2} \\
+			&= \sqrt{a^2+b^2}
+		\end{split}
+	\end{equation*}
+	记$c=\sqrt{a^2+b^2}$,
+	于是
+	\begin{equation*}
+		\boldsymbol{t}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+		=(-\frac{a}{c}\cos t,\frac{a}{c}\sin t,\frac{b}{c})
+	\end{equation*}
+	而由
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=(\frac{a}{c^2}\sin t,\frac{a}{c^2}\cos t,0)
+	\end{equation*}
+	故曲率
+	\begin{equation*}
+		\kappa(t)=|\frac{d\boldsymbol{t}}{ds}|=\frac{a}{c^2}
+	\end{equation*}
+	则法向量
+	\begin{equation*}
+		\boldsymbol{n}=\frac{1}{\kappa}\frac{d\boldsymbol{t}}{ds}=(\sin t,\cos t,0)
+	\end{equation*}
+	那么副法向量
+	\begin{equation*}
+		\boldsymbol{b}=\boldsymbol{t}\wedge\boldsymbol{n}
+		=(-\frac{b}{c}\cos t)
+	\end{equation*}
+	
+	(4)
+	由
+	\begin{equation*}
+		\begin{split}
+			\frac{ds}{dt}
+			&=\sqrt{a^2+\left(\sqrt{2}a\frac{1}{t}\right)^2+\left(-\frac{a}{t}\right)^2} \\
+			&=\sqrt{a^2+\frac{2a^2}{t^2}+\frac{a^2}{t^4}} \\
+			&=a\sqrt{1+\frac{2}{t^2}+\frac{1}{t^4}} \\
+			&=a(1+\frac{1}{t})
+		\end{split}
+	\end{equation*}
+	于是
+	\begin{equation*}
+		\dot{\boldsymbol{t}}=\frac{d\boldsymbol{r}}{dt}\frac{dt}{ds}
+		=\frac{t}{t+1}(1,\frac{\sqrt{2}}{t},-\frac{1}{t^2})
+	\end{equation*}
+	而由
+	\begin{equation*}
+		\frac{d\boldsymbol{t}}{ds}=\frac{d\boldsymbol{t}}{dt}\frac{dt}{ds}
+		=\frac{t}{a(t+1)}(\frac{1}{(t+1)^2},-\frac{\sqrt{2}}{(t+1)^2},\frac{2t+1}{t^2(t+1)^2})
+	\end{equation*}
+	知
+	\begin{equation*}
+		\kappa(t)=|\frac{d\boldsymbol{t}}{ds}|=\frac{\sqrt{3t^2+(2+\frac{1}{t})^2}}{a(t+1)^3}
+	\end{equation*}
+	于是法向量
+	\begin{equation*}
+		\boldsymbol{n}=\frac{1}{\kappa(t)}\frac{d\boldsymbol{t}}{ds}=\frac{1}{\sqrt{3t^2+(2+\frac{1}{t})^2}}(t,-\sqrt{2}t,2+\frac{1}{t})
+	\end{equation*}
+	则副法向量
+	\begin{equation*}
+		\boldsymbol{b}=\boldsymbol{t}\wedge\boldsymbol{n}=\frac{1}{\sqrt{3t^2+(2+\frac{1}{t})^2}}(\sqrt{2},-2,-\sqrt{2}t)
+	\end{equation*}
+\end{tcolorbox}
